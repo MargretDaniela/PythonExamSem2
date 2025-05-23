@@ -6,8 +6,8 @@ class Product(db.Model):
 
     id = db.Column(db.Integer(), primary_key = True)
     name = db.Column(db.String(255), nullable = False)
-    created_at = db.Column(db.Datetime, default= datetime.utcnow)
-    updated_at = db.Column(db.Datetime, onupdate = datetime.utcnow)
+    # created_at = db.Column(db.Datetime, default= datetime.utcnow)
+    # updated_at = db.Column(db.Datetime, onupdate = datetime.utcnow)
     categories = db.relationship('Product', backref = 'categories')
     category_id = db.Column(db.Integer, db.ForeignKey('categories.id'))
 

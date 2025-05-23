@@ -7,8 +7,8 @@ class Customer(db.Model):
     id = db.Column(db.Integer(), primary_key = True)
     first_name = db.Column(db.String(255), nullable = False)
     last_name = db.Column(db.String(255), nullable = False)
-    created_at = db.Column(db.DateTime, default=datetime.now())
-    updated_at = db.Column(db.Datetime, default=datetime.now(), onupdate = datetime.utcnow)
+    # created_at = db.Column(db.DateTime, default=datetime.now())
+    # updated_at = db.Column(db.Datetime, default=datetime.now(), onupdate = datetime.utcnow)
     email = db.Column(db.String(255), nullable = False, unique = True)
     
 
@@ -19,4 +19,4 @@ class Customer(db.Model):
         self.password = password
 
     def full_name(self):
-        return f"{self.first_name} { self.last_name}"
+        return f"{self.first_name} {self.last_name}"
